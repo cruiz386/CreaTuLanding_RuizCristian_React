@@ -9,7 +9,7 @@ const NavBar = ({ cartCount }) => {
       <Container>
         <Logo
           src="./src/assets/logo/logo_fdo_negro.png"
-          alt="Logo CaSa footer blanco"
+          alt="Logo CaSa footer negro"
           style={{ width: "70px", borderRadius: "30%", margin:"5px 50px" }}
         />
         <Navbar.Brand href="#home">CaSa Smart</Navbar.Brand>
