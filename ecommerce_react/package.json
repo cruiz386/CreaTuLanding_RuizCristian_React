@@ -2,6 +2,7 @@
   "name": "ecommerce_react",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://cruiz386.github.io/CreaTuLanding_RuizCristian_Coder/",
   "type": "module",
   "scripts": {
     "dev": "vite",
