@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/CreaTuLanding_RuizCristian_Coder/',
+  base: 'https://cruiz386.github.io/CreaTuLanding_RuizCristian/',
 })
