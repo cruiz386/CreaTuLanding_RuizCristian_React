@@ -19,12 +19,11 @@ const Item = ({ id, image, name, price, description, category }) => {
                     <p className="card-text">Categoria: {category}</p>
                     <p className="card-text">{description}</p>
                     <p className="card-text ">Precio: ${price}</p>
-
-                    <Link to={`/CreaTuLanding_RuizCristian/item/${id}`}>
-                        <div className="d-flex align-items-center justify-content-center mb-4">
+                    <div className="d-flex align-items-center justify-content-center mb-4">
+                        <Link to={`/CreaTuLanding_RuizCristian/item/${id}`}>
                             <Button textButton="Ver detalles" />
-                        </div>
-                    </Link>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
