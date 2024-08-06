@@ -1,13 +1,18 @@
 import React from 'react';
 import ItemList from './ItemList';
+import Loader from './Loader';
+import { useAppContext } from './Context';
 
+const ItemListContainer = () => {
 
-const ItemListContainer = ({ products }) => {
+    const { products } = useAppContext();
+
     return (
         <>
             {
                 products.length === 0 ?
-                    <p>Cargando productos disponibles...</p>
+                <div><Loader />
+                <p> Cargando productos disponibles...</p></div>                    
                     :
                     <ItemList products={products} />
             }

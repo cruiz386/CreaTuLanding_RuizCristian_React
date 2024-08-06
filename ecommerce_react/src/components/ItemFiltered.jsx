@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Item from './Item';
+import Loader from './Loader';
+import { useAppContext } from './Context';
 
-const ItemFiltered = ({ products }) => {
+
+const ItemFiltered = () => {
+    const { products } = useAppContext();
     const { categoryId } = useParams();
     const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -14,7 +18,8 @@ const ItemFiltered = ({ products }) => {
     }, [categoryId, products]);
 
     if (filteredProducts.length === 0) {
-        return <div>Cargando productos...</div>;
+        return <div><Loader />
+        <p> Cargando productos disponibles...</p></div>;
     }
 
     return (
@@ -27,6 +32,7 @@ const ItemFiltered = ({ products }) => {
                         image={`.${product.image}`}
                         name={product.name}
                         price={product.price}
+                        stock={product.stock}
                         description={product.description}
                         category={product.category}
                     />

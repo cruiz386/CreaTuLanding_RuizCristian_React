@@ -1,7 +1,7 @@
 import Button from './Button';
 import { Link } from 'react-router-dom';
 
-const Item = ({ id, image, name, price, description, category }) => {
+const Item = ({ id, image, name, price, description, category, stock }) => {
 
 
     return (
@@ -19,6 +19,7 @@ const Item = ({ id, image, name, price, description, category }) => {
                     <p className="card-text">Categoria: {category}</p>
                     <p className="card-text">{description}</p>
                     <p className="card-text ">Precio: ${price}</p>
+                    <p className="card-text ">Stock disponible: {stock}</p>
                     <div className="d-flex align-items-center justify-content-center mb-4">
                         <Link to={`/CreaTuLanding_RuizCristian/item/${id}`}>
                             <Button textButton="Ver detalles" />

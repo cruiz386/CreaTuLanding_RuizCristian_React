@@ -1,12 +1,18 @@
 import React from 'react';
 import ItemFiltered from './ItemFiltered';
+import Loader from './Loader';
+import { useAppContext } from './Context';
 
-const ItemListFiltered = ({ products }) => {
+const ItemListFiltered = () => {
+
+    const { products } = useAppContext();
+
     return (
         <>
             {
                 products.length === 0 ?
-                    <p>Cargando productos de la categoría seleccionada...</p>
+                <div><Loader />
+                <p> Cargando productos de categoria seleccionada...</p></div>
                     :
                     <ItemFiltered products={products} />
             }

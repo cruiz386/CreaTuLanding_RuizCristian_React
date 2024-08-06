@@ -1,7 +1,11 @@
 import React from 'react';
 import Item from './Item';
+import { useAppContext } from './Context';
 
-const ItemList = ({ products, addToCart }) => {
+const ItemList = () => {
+
+    const { products, addToCart } = useAppContext();
+
     return (
         <div className="row">
             {
@@ -13,6 +17,7 @@ const ItemList = ({ products, addToCart }) => {
                             image={product.image}
                             name={product.name}
                             price={product.price}
+                            stock={product.stock}
                             description={product.description}
                             category={product.category}
                             addToCart={addToCart}

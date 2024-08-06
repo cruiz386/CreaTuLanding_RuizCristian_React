@@ -1,7 +1,10 @@
 import React from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
+import { useAppContext } from './Context'; 
 
-const CartWidget = ({ cartCount }) => {
+const CartWidget = () => {
+    const { cartCount } = useAppContext();
+
     return (
         <div style={{ color: 'white', fontSize: '1.5rem', position: 'relative', display: 'inline-block' }} className="mb-4">
             <FaShoppingCart />
