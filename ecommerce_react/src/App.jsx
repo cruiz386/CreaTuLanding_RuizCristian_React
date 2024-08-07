@@ -8,10 +8,12 @@ import NotFound from './components/NotFound';
 import Cart from './components/Cart';
 import FinishPurchase from './components/FinishPurchase';
 import './App.css';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
     return (
-        <div className="app-container">
+        <div className="app-container page-gradient">
             <BrowserRouter>
                 <NavBar />
                 <main className="content">
@@ -25,9 +27,11 @@ const App = () => {
                     </Routes>
                 </main>
                 <Footer />
+                <ToastContainer />
             </BrowserRouter>
         </div>
     );
 };
 
 export default App;
+

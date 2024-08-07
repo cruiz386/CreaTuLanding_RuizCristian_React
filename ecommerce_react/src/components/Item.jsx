@@ -1,16 +1,20 @@
+import React from 'react';
 import Button from './Button';
 import { Link } from 'react-router-dom';
 
+
 const Item = ({ id, image, name, price, description, category, stock }) => {
-    
-    const imageUrl = image; 
+    const imageUrl = image;
+
+    const cardStyle = stock === 0 ? { opacity: 0.5, pointerEvents: 'none' } : {};
+    const buttonStyle = stock === 0 ? { cursor: 'not-allowed' } : {};
 
     return (
-        <div className="col-lg-4 col-md-6 mb-4">
-            <div className="card h-100 align-items-center justify-content-center mb-4">
+        <div className="col-lg-4 col-md-6 mb-4" >
+            <div  className="card h-100 align-items-center justify-content-center mb-4 " style={cardStyle}>
                 <img
                     src={imageUrl}
-                    className="card-img-top m-2"
+                    className="card-img-top m-2 "
                     alt={name}
                     style={{ width: '15rem', height: '200px', maxWidth: '200px', maxHeight: '250px', alignSelf: 'center' }}
                 />
@@ -22,14 +26,21 @@ const Item = ({ id, image, name, price, description, category, stock }) => {
                     <p className="card-text">Stock disponible: {stock}</p>
                     <div className="d-flex align-items-center justify-content-center mb-4">
                         <Link to={`/CreaTuLanding_RuizCristian/item/${id}`}>
-                            <Button textButton="Ver detalles" />
+                            <Button textButton="Ver detalles" disabled={stock === 0} style={buttonStyle} />
                         </Link>
                     </div>
                 </div>
+                
+                {stock === 0 && (
+                    <div className="card-footer text-center" style={{ width: '15rem', height: 'auto', color: 'white', backgroundColor: 'red', alignSelf: 'center' }} >
+                        <small>Producto no disponible</small>
+                    </div>
+                )}
             </div>
         </div>
     );
 };
 
 export default Item;
+
 

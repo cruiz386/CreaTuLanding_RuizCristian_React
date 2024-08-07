@@ -1,9 +1,9 @@
-/* HTML: <div class="loader"></div> */
+
 .loader {
     width: 60px;
     height: 60px;
     display: flex;
-    color: #575f75;
+    color: #7193ee;
     --c:#0000 calc(100% - 20px),currentColor calc(100% - 19px) 98%,#0000;
     background:
       radial-gradient(farthest-side at left,var(--c)) right /50% 100%,
@@ -30,3 +30,18 @@
     50%     {transform: perspective(150px) rotateY(180deg) rotate(0)} 
     80%,100%{transform: perspective(150px) rotateY(180deg) rotate(90deg)}
   }
+
+  .loader-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+.loading-text {
+    margin-top: 20px;
+    font-size: 24px; 
+    text-align: center;
+    color: rgb(62, 42, 148); 
+}

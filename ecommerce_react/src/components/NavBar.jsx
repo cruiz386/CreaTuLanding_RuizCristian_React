@@ -4,19 +4,19 @@ import Logo from './Logo';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useAppContext } from './Context';
-
+import './NavBar.css'; 
 
 const NavBar = () => {
     const { cartCount } = useAppContext();
 
     return (
-        <Navbar bg="secondary" variant="dark" expand="lg" className="mb-4">
+        <Navbar bg="black" variant="dark" expand="lg" className="mb-4">
             <Container>
                 <Link to="/CreaTuLanding_RuizCristian/">
                     <Logo
                         src={"https://cruiz386.github.io/CreaTuLanding_RuizCristian/assets/logo/logo_fdo_negro.png"}
                         alt="Logo CaSa footer negro"
-                        style={{ width: "70px", borderRadius: "30%", margin: "5px 50px" }}
+                        style={{ width: "70px", borderRadius: "50%", margin: "10px 100px" ,border: "2px solid #444"}}
                     />
                 </Link>
                 <Navbar.Brand as={Link} to="/CreaTuLanding_RuizCristian/">CaSa Smart</Navbar.Brand>

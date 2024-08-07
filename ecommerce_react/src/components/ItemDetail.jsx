@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
 import Button from './Button';
 import { useAppContext } from './Context';
+import { toast } from 'react-toastify';
+import './ItemDetail.css';
 
 const ItemDetail = () => {
     const { products, addToCart } = useAppContext();
@@ -16,6 +18,23 @@ const ItemDetail = () => {
             const foundProduct = products.find(p => p.id === itemId);
             if (foundProduct) {
                 setProduct(foundProduct);
+                if (foundProduct.stock === 0) {
+                    toast.error('No quedan más productos en stock', {
+                        position: "top-center",
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        style: {
+                            fontFamily: 'Arial, sans-serif',
+                            fontSize: '16px',
+                            color: '#fff',
+                            backgroundColor: '#ff4d4d'
+                        }
+                    });
+                }
             }
         }
     }, [itemId, products]);
@@ -45,29 +64,29 @@ const ItemDetail = () => {
 
     const imageUrl = product.image.startsWith('http') ? product.image : `${baseUrl}${product.image}`;
 
-
     return (
-        <div className="col-lg-4 col-md-6 mb-4">
-            <div className="card h-100 align-items-center justify-content-center mb-4">
-                <img
-                    src={imageUrl}
-                    className="card-img-top m-2"
-                    alt={product.name}
-                    style={{ width: '15rem', height: '200px', maxWidth: '200px', maxHeight: '250px', alignSelf: 'center' }}
-                />
-                <div className="card-body">
-                    <h5 className="card-title">{product.name}</h5>
-                    <p className="card-text">Categoria: {product.category}</p>
-                    <p className="card-text">{product.description}</p>
-                    <p className="card-text">Precio: ${product.price}</p>
-                    <p className="card-text">Stock disponible: {product.stock}</p>
+        <div className="item-detail-container">
+            <div className="item-detail-card">
+                <div className="item-detail-image-container">
+                    <img
+                        src={imageUrl}
+                        alt={product.name}
+                        className="item-detail-image"
+                    />
+                </div>
+                <div className="item-detail-body">
+                    <h5 className="item-detail-title">{product.name}</h5>
+                    <p className="item-detail-text">Categoría: {product.category}</p>
+                    <p className="item-detail-text">{product.description}</p>
+                    <p className="item-detail-text">Precio: ${product.price}</p>
+                    <p className="item-detail-text">Stock disponible: {product.stock}</p>
                     <ItemCount
                         quantity={quantity}
                         incrementQuantity={incrementQuantity}
                         decrementQuantity={decrementQuantity}
                         stock={product.stock}
                     />
-                    <div className="d-flex align-items-center justify-content-center mb-4">
+                    <div className="item-detail-buttons">
                         <Button textButton="Agregar al carrito" onClick={handleAddToCart} disabled={product.stock === 0} />
                         <Link to="/CreaTuLanding_RuizCristian/cart">
                             <Button textButton="Ver Carrito" />

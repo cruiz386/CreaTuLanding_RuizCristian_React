@@ -1,0 +1,58 @@
+
+
+.custom-navbar {
+    background-color: #007bff; 
+    border-bottom: 2px solid #0056b3; 
+    padding: 0.5rem 1rem;
+}
+
+.logo {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.brand-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.nav-link {
+    color: #ffffff; 
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #9dc5be; 
+}
+
+.nav-dropdown .dropdown-toggle::after {
+    display: none; 
+}
+
+.nav-dropdown {
+    color: #007bff; 
+}
+
+.dropdown-item {
+    color: #e7ecf1; 
+}
+
+.nav-dropdown .dropdown-item:hover {
+    background-color: #849fb9; 
+}
+
+.dropdown-menu {
+    background-color: #8e8e8fd7; 
+}
+
+.cart-widget {
+    position: relative;
+}
+
+.cart-widget .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 0.75rem;
+}
