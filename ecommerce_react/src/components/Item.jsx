@@ -10,13 +10,13 @@ const Item = ({ id, image, name, price, description, category, stock }) => {
     const buttonStyle = stock === 0 ? { cursor: 'not-allowed' } : {};
 
     return (
-        <div className="col-lg-4 col-md-6 mb-4" >
-            <div  className="card h-100 align-items-center justify-content-center mb-4 " style={cardStyle}>
+        <div className="col-lg-4 col-md-6 mb-4"  style={{ width: '280px', height: '500px', alignSelf: 'center'}}>
+            <div  className="card h-100 align-items-center justify-content-center mb-4" style={cardStyle}>
                 <img
                     src={imageUrl}
                     className="card-img-top m-2 "
                     alt={name}
-                    style={{ width: '15rem', height: '200px', maxWidth: '200px', maxHeight: '250px', alignSelf: 'center' }}
+                    style={{ width: '15rem', height: '100px', maxWidth: '100px', maxHeight: '250px', alignSelf: 'center' }}
                 />
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>

@@ -1,0 +1,23 @@
+.item-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+.item-card {
+    width: 200px; /* Ajusta el tamaño de la tarjeta */
+    height: auto; /* Ajusta la altura */
+    padding: 15px; /* Reduce el padding */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.item-card img {
+    width: 100px; /* Ajusta el tamaño de la imagen */
+    height: 100px;
+}

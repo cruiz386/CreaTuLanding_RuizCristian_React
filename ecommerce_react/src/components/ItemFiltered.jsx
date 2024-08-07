@@ -23,7 +23,7 @@ const ItemFiltered = () => {
     }
 
     return (
-        <div className="row">
+        <div className="row justify-content-center">
             {
                 filteredProducts.map((product) => (
                     <Item

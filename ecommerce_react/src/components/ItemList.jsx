@@ -13,7 +13,7 @@ const ItemList = () => {
     });
 
     return (
-        <div className="row">
+        <div className="row justify-content-center">
             {
                 sortedProducts.map((product) => {
                     return (
