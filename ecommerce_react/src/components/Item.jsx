@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const Item = ({ id, image, name, price, description, category, stock }) => {
     const baseUrl = "https://cruiz386.github.io/CreaTuLanding_RuizCristian/assets/";
 
-
-    const imageUrl = image.startsWith('http') ? image : `${baseUrl}${image}`;
+    // Construye la URL completa para la imagen
+    const imageUrl = image.startsWith('http') ? image : `${baseUrl}${image.replace(/^\.\//, '')}`;
     
     return (
         <div className="col-lg-4 col-md-6 mb-4">
@@ -35,4 +35,3 @@ const Item = ({ id, image, name, price, description, category, stock }) => {
 };
 
 export default Item;
-
