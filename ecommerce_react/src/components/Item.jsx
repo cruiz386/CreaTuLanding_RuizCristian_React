@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 
 const Item = ({ id, image, name, price, description, category, stock }) => {
  
-  
+    const imageUrl = image; 
 
     return (
         <div className="col-lg-4 col-md-6 mb-4">
             <div className="card h-100 align-items-center justify-content-center mb-4">
                 <img
-                    src={image}
+                    src={imageUrl}
                     className="card-img-top m-2"
                     alt={name}
                     style={{ width: '15rem', height: '200px', maxWidth: '200px', maxHeight: '250px', alignSelf: 'center' }}
@@ -32,4 +32,3 @@ const Item = ({ id, image, name, price, description, category, stock }) => {
 };
 
 export default Item;
-
