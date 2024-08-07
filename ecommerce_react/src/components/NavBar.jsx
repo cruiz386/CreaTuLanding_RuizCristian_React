@@ -10,7 +10,7 @@ const NavBar = () => {
     const { cartCount } = useAppContext();
 
     return (
-        <Navbar bg="black" variant="dark" expand="lg" className="mb-4">
+        <Navbar bg="black" variant="dark" expand="lg" className="mb-4 custom-navbar">
             <Container>
                 <Link to="/CreaTuLanding_RuizCristian/">
                     <Logo

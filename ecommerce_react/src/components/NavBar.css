@@ -56,3 +56,16 @@
     right: -10px;
     font-size: 0.75rem;
 }
+
+.custom-navbar>.container, 
+.custom-navbar>.container-fluid, 
+.custom-navbar>.container-lg, 
+.custom-navbar>.container-md, 
+.custom-navbar>.container-sm, 
+.custom-navbar>.container-xl, 
+.custom-navbar>.container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: center;
+}
