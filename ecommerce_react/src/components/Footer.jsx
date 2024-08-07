@@ -10,7 +10,7 @@ const Footer = () => {
   
       <Link to="/CreaTuLanding_RuizCristian/">
         <Logo 
-          src="./src/assets/logo/logo_fdo_bco.png" 
+          src="https://cruiz386.github.io/CreaTuLanding_RuizCristian/assets/logo/logo_fdo_bco.png" 
           alt="Logo CaSa footer blanco" 
           style={{ width: "50px", borderRadius: "30%", borderStyle: 'groove', margin:"20px" }}  
         />

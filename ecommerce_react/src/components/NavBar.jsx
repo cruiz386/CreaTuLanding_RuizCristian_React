@@ -4,7 +4,7 @@ import Logo from './Logo';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useAppContext } from './Context';
-import logo from './assets/logo/logo_fdo_negro.png';
+
 
 const NavBar = () => {
     const { cartCount } = useAppContext();
@@ -14,7 +14,7 @@ const NavBar = () => {
             <Container>
                 <Link to="/CreaTuLanding_RuizCristian/">
                     <Logo
-                        src={logo}
+                        src={"https://cruiz386.github.io/CreaTuLanding_RuizCristian/assets/logo/logo_fdo_negro.png"}
                         alt="Logo CaSa footer negro"
                         style={{ width: "70px", borderRadius: "30%", margin: "5px 50px" }}
                     />

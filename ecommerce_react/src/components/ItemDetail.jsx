@@ -9,6 +9,7 @@ const ItemDetail = () => {
     const { itemId } = useParams();
     const [product, setProduct] = useState(null);
     const [quantity, setQuantity] = useState(1);
+   
 
     useEffect(() => {
         if (products.length > 0) {
@@ -46,7 +47,7 @@ const ItemDetail = () => {
         <div className="col-lg-4 col-md-6 mb-4">
             <div className="card h-100 align-items-center justify-content-center mb-4">
                 <img
-                    src={"." + product.image}
+                    src={product.image}
                     className="card-img-top m-2"
                     alt={product.name}
                     style={{ width: '15rem', height: '200px', maxWidth: '200px', maxHeight: '250px', alignSelf: 'center' }}
