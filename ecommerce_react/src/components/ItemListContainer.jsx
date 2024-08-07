@@ -5,19 +5,18 @@ import { useAppContext } from './Context';
 import './Loader.css';
 
 const ItemListContainer = () => {
-
     const { products } = useAppContext();
+    const imageUrl = "/assets/img-tienda-online.jpg"; 
 
     return (
         <>
             {
                 products.length === 0 ?
                     <div className="loader-container">
-
                         <Loader />
                         <img
-                            src="https:cruiz386/CreaTuLanding_RuizCristian_React/main/ecommerce_react/public/assets/img-tienda-online.jpg"
-                            className="card-img-top m-2 "
+                            src={imageUrl}
+                            className="card-img-top m-2"
                             alt="tienda"
                             style={{ width: '15rem', height: '200px', maxWidth: '200px', maxHeight: '250px', alignSelf: 'center' }}
                         />
