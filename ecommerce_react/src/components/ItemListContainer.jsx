@@ -16,7 +16,7 @@ const ItemListContainer = () => {
 
                         <Loader />
                         <img
-                            src="https://cruiz386.github.io/CreaTuLanding_RuizCristian/assets/img-tienda-online.webp"
+                            src="https:cruiz386/CreaTuLanding_RuizCristian_React/main/ecommerce_react/public/assets/img-tienda-online.jpg"
                             className="card-img-top m-2 "
                             alt="tienda"
                             style={{ width: '15rem', height: '200px', maxWidth: '200px', maxHeight: '250px', alignSelf: 'center' }}
