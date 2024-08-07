@@ -43,9 +43,8 @@ const ItemDetail = () => {
         }
     };
 
-    // Debugging: Log the final image URL
     const imageUrl = product.image.startsWith('http') ? product.image : `${baseUrl}${product.image}`;
-    console.log('Image URL:', imageUrl);
+
 
     return (
         <div className="col-lg-4 col-md-6 mb-4">
