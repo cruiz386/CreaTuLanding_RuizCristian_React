@@ -43,11 +43,15 @@ const ItemDetail = () => {
         }
     };
 
+    // Debugging: Log the final image URL
+    const imageUrl = product.image.startsWith('http') ? product.image : `${baseUrl}${product.image}`;
+    console.log('Image URL:', imageUrl);
+
     return (
         <div className="col-lg-4 col-md-6 mb-4">
             <div className="card h-100 align-items-center justify-content-center mb-4">
                 <img
-                    src={product.image.startsWith('http') ? product.image : `${baseUrl}${product.image}`} 
+                    src={imageUrl}
                     className="card-img-top m-2"
                     alt={product.name}
                     style={{ width: '15rem', height: '200px', maxWidth: '200px', maxHeight: '250px', alignSelf: 'center' }}
