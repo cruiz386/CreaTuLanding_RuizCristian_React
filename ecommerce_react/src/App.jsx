@@ -13,10 +13,10 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
     return (
-        <div className="app-container page-gradient">
+        <div className="page-gradient">
             <BrowserRouter>
                 <NavBar />
-                <main className="content">
+                <main className="content app-container">
                     <Routes>
                         <Route path="/CreaTuLanding_RuizCristian/" element={<ItemListContainer />} />
                         <Route path="/CreaTuLanding_RuizCristian/category/:categoryId" element={<ItemListFiltered />} />
