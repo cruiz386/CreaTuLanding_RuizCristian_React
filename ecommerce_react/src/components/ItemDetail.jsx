@@ -56,9 +56,40 @@ const ItemDetail = () => {
     };
 
     const handleAddToCart = () => {
-        if (product.stock > 0) {
+        if (product.stock > 0 && quantity <= product.stock) {
             addToCart(product, quantity);
-            setQuantity(1); 
+            setQuantity(1);  
+            toast.success(`${quantity} ${product.name}(s) agregado(s) al carrito`, {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                style: {
+                    fontFamily: 'Arial, sans-serif',
+                    fontSize: '16px',
+                    color: '#fff',
+                    backgroundColor: '#4caf50'
+                }
+            });
+        } else {
+            toast.error('Cantidad no válida', {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                style: {
+                    fontFamily: 'Arial, sans-serif',
+                    fontSize: '16px',
+                    color: '#fff',
+                    backgroundColor: '#ff4d4d'
+                }
+            });
         }
     };
 
@@ -87,7 +118,11 @@ const ItemDetail = () => {
                         stock={product.stock}
                     />
                     <div className="item-detail-buttons">
-                        <Button textButton="Agregar al carrito" onClick={handleAddToCart} disabled={product.stock === 0} />
+                        <Button 
+                            textButton="Agregar al carrito" 
+                            onClick={handleAddToCart} 
+                            disabled={product.stock === 0} 
+                        />
                         <Link to="/CreaTuLanding_RuizCristian/cart">
                             <Button textButton="Ver Carrito" />
                         </Link>
@@ -99,3 +134,4 @@ const ItemDetail = () => {
 };
 
 export default ItemDetail;
+
