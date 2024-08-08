@@ -37,19 +37,25 @@ export const ContextProvider = ({ children }) => {
     };
 
     const addToCart = (product, quantity) => {
+        if (product.stock < quantity) {
+            console.error(`No hay suficiente stock para ${product.name}`);
+            return;
+        }
+    
         const existingProductIndex = cart.findIndex(item => item.id === product.id);
         let updatedCart;
-
+    
         if (existingProductIndex >= 0) {
             updatedCart = [...cart];
             updatedCart[existingProductIndex].quantity += quantity;
         } else {
             updatedCart = [...cart, { ...product, quantity }];
         }
-
+    
         setCart(updatedCart);
-        updateProductStock(product.id, -quantity); 
+        updateProductStock(product.id, -quantity);
     };
+    
 
     const removeFromCart = (productId) => {
         const productToRemove = cart.find(item => item.id === productId);
@@ -69,21 +75,28 @@ export const ContextProvider = ({ children }) => {
             const productRef = doc(db, "items", productId);
             const productToUpdate = products.find(product => product.id === productId);
             if (productToUpdate) {
-                await updateDoc(productRef, {
-                    stock: Number(productToUpdate.stock) + quantityChange 
-                });
-                setProducts(prevProducts =>
-                    prevProducts.map(product =>
-                        product.id === productId
-                            ? { ...product, stock: Number(product.stock) + quantityChange }
-                            : product
-                    )
-                );
+                const newStock = Number(productToUpdate.stock) + quantityChange;
+    
+                if (newStock >= 0) { 
+                    await updateDoc(productRef, {
+                        stock: newStock 
+                    });
+                    setProducts(prevProducts =>
+                        prevProducts.map(product =>
+                            product.id === productId
+                                ? { ...product, stock: newStock }
+                                : product
+                        )
+                    );
+                } else {
+                    console.error(`No se puede actualizar el stock de ${productToUpdate.name} a un valor negativo.`);
+                }
             }
         } catch (error) {
             console.error("Error al actualizar el stock:", error);
         }
     };
+    
 
     return (
         <AppContext.Provider value={{ products, cart, cartCount, addToCart, removeFromCart, clearCart, updateProductStock }}>

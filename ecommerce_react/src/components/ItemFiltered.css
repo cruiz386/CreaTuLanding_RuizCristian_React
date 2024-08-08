@@ -6,9 +6,9 @@
     padding: 20px;
 }
 .item-card {
-    width: 200px; /* Ajusta el tamaño de la tarjeta */
-    height: auto; /* Ajusta la altura */
-    padding: 15px; /* Reduce el padding */
+    width: 200px; 
+    height: auto; 
+    padding: 15px; 
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: white;
@@ -18,6 +18,6 @@
     justify-content: center;
 }
 .item-card img {
-    width: 100px; /* Ajusta el tamaño de la imagen */
+    width: 100px; 
     height: 100px;
 }

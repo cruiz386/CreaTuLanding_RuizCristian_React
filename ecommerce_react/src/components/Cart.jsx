@@ -32,6 +32,14 @@ const Cart = () => {
     const handleFinishPurchase = async () => {
         const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
+        
+        for (let item of cart) {
+            if (item.stock < item.quantity) {
+                Swal.fire('Error', `No hay suficiente stock para el producto: ${item.name}`, 'error');
+                return; 
+            }
+        }
+
         const { isConfirmed } = await Swal.fire({
             title: 'Confirmar Compra',
             html: `
@@ -84,9 +92,9 @@ const Cart = () => {
                     Swal.fire('Compra realizada', `Tu orden ha sido generada con ID: ${docRef.id}`, 'success');
 
                     
-                    cart.forEach(async item => {
+                    for (let item of cart) {
                         await updateProductStock(item.id, -item.quantity);
-                    });
+                    }
 
                     clearCart();
                     navigate('/CreaTuLanding_RuizCristian/finishPurchase', { state: { orderId: docRef.id, order } });
@@ -103,7 +111,7 @@ const Cart = () => {
     }
 
     return (
-        <div className="cart-container">
+        <div className="cart-container ">
             <h2 className="content">Carrito de Compras</h2>
             <div className="cart-grid content">
                 {cart.map((item, index) => (
