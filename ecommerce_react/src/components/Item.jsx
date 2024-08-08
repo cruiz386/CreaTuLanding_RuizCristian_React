@@ -10,7 +10,7 @@ const Item = ({ id, image, name, price, description, category, stock }) => {
     const buttonStyle = stock === 0 ? { cursor: 'not-allowed' } : {};
 
     return (
-        <div className="col-lg-4 col-md-6 mb-4"  style={{ width: '280px', height: '500px', alignSelf: 'center'}}>
+        <div className="col-lg-4 col-md-6 mb-4"  style={{ width: '300px', height: '550px', alignSelf: 'center'}}>
             <div  className="card h-100 align-items-center justify-content-center mb-4" style={cardStyle}>
                 <img
                     src={imageUrl}

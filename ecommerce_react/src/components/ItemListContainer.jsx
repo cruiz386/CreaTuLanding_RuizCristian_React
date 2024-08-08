@@ -8,7 +8,7 @@ const ItemListContainer = () => {
     const { products } = useAppContext();
     const imageUrl = "https://cruiz386.github.io/CreaTuLanding_RuizCristian/assets/img-tienda-online.jpg"; 
     
-
+ 
     return (
         <>
             {
