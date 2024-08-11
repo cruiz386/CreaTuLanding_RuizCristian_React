@@ -1,0 +1,56 @@
+/* Contenedor principal de tarjetas */
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en varias filas */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    gap: 20px; /* Espacio entre las tarjetas */
+    padding: 20px; /* Espacio alrededor del contenedor */
+}
+
+/* Estilos generales para todas las tarjetas */
+.card {
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+    max-width: 100%; /* Asegura que las tarjetas no excedan el ancho del contenedor */
+}
+
+/* Estilos para dispositivos móviles (máximo 768px) */
+@media (max-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 70%;
+        max-width: 70%; /* Ajusta el ancho de las tarjetas en dispositivos móviles */
+    }
+    
+    .col-lg-4 {
+        flex: 0 0 80%;
+        max-width: 80%;
+        padding: 10px; /* Asegura que las tarjetas ocupen el ancho completo en móviles */
+    }
+}
+
+/* Estilos para tablets y dispositivos con pantalla media (mínimo 769px y máximo 959px) */
+@media (min-width: 769px) and (max-width: 959px) {
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%; /* Ajusta el ancho de las tarjetas en dispositivos de tamaño mediano */
+        padding: 10px;
+    }
+
+    .col-lg-4 {
+        flex: 0 0 33.33%;
+        max-width: 33.33%; /* Ajusta el ancho de las tarjetas en dispositivos de tamaño mediano */
+    }
+}
+
+/* Estilos para dispositivos de escritorio y pantallas grandes (mínimo 960px) */
+@media (min-width: 960px) {
+    .col-md-6 {
+        flex: 0 0 30%;
+        max-width: 30%; /* Ajusta el ancho de las tarjetas en pantallas grandes */
+        padding: 10px;
+    }
+
+    .col-lg-4 {
+        flex: 0 0 20%;
+        max-width: 30%; /* Ajusta el ancho de las tarjetas en pantallas grandes */
+    }
+}

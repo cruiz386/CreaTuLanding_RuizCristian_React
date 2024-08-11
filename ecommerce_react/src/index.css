@@ -1,5 +1,4 @@
-
-
+/* Estilos globales del body */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -7,16 +6,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-
+/* Estilos para el contenedor raíz */
 #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  
+  width: 100vw;
+  margin: 0; /* Elimina cualquier margen predeterminado del contenedor raíz */
 }
 
-
+/* Estilos para el fondo con gradiente */
 .page-gradient {
   background: 
   radial-gradient(circle at 10% 20%, rgba(188, 209, 219, 0.157) 300px, rgba(193, 219, 216, 0.322) 540px), 
@@ -25,6 +24,7 @@ body {
   radial-gradient(circle at 15% 80%, rgba(158, 173, 69, 0.2) 300px, transparent 890px),
   radial-gradient(circle at 90% 90%, rgba(221, 220, 240, 0.1) 270px, rgba(192, 241, 237, 0.198) 270px),  
   radial-gradient(circle at 5% 80%, rgba(166, 207, 150, 0.4) 20px, transparent 470px);
-
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; 
 }

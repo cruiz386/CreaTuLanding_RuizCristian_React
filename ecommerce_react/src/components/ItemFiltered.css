@@ -6,7 +6,6 @@
     padding: 20px;
 }
 .item-card {
-    width: 200px; 
     height: auto; 
     padding: 15px; 
     border: 1px solid #ddd;
@@ -17,7 +16,4 @@
     align-items: center;
     justify-content: center;
 }
-.item-card img {
-    width: 100px; 
-    height: 100px;
-}
+

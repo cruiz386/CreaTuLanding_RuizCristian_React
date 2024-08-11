@@ -1,18 +1,22 @@
+/* Estilos para el contenedor principal de la aplicación */
 .app-container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    padding: 0 15px; 
+    min-height: 80vh;
+    padding: 0 15px;
+    width: 100vw; 
+    box-sizing: border-box; 
+    align-items: center; 
 }
+
 
 .content {
-    flex: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
     padding: 5px; 
     max-width: 1600px; 
-     
+    width: 100%; 
+    box-sizing: border-box; 
 }
-
-
