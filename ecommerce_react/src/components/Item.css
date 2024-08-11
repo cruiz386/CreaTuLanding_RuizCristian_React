@@ -11,8 +11,12 @@
 .card {
     box-sizing: border-box; /* Incluye padding y border en el ancho total */
     max-width: 100%; /* Asegura que las tarjetas no excedan el ancho del contenedor */
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.144); 
 }
 
+.card:hover {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.637); 
+}
 /* Estilos para dispositivos móviles (máximo 768px) */
 @media (max-width: 768px) {
     .col-md-6 {
