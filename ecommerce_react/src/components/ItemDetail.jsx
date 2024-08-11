@@ -113,7 +113,7 @@ const ItemDetail = () => {
                     <img
                         src={imageUrl}
                         alt={product.name}
-                        className="item-detail-image"
+                        className="item-detail-image mt-4"
                     />
                 </div>
                 <div className="item-detail-body">
