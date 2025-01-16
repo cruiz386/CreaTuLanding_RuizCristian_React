@@ -44,13 +44,6 @@ Este proyecto es una aplicación de comercio electrónico construida con React y
 - VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
 - VITE_FIREBASE_APP_ID=your_app_id
  
-**Estas son las variables de entorno del proyecto**
-- VITE_FIREBASE_API_KEY=AIzaSyBCcNcwx1yA0FzKuigJ7vkUWE7Rt-atrsE
-- VITE_FIREBASE_AUTH_DOMAIN=coderhouse-ecommerce-54429.firebaseapp.com
-- VITE_FIREBASE_PROJECT_ID=coderhouse-ecommerce-54429
-- VITE_FIREBASE_STORAGE_BUCKET=coderhouse-ecommerce-54429.appspot.com
-- VITE_FIREBASE_MESSAGING_SENDER_ID=287261797726
-- VITE_FIREBASE_APP_ID=1:287261797726:web:ab1bbb4ca3a5f207b973cf
 
 4. Instala las dependencias:
 npm install
